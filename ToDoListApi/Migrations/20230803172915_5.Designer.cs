@@ -12,8 +12,8 @@ using ToDoListApi.Data;
 namespace ToDoListApi.Migrations
 {
     [DbContext(typeof(ToDoDbContext))]
-    [Migration("20230803082737_1")]
-    partial class _1
+    [Migration("20230803172915_5")]
+    partial class _5
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -48,8 +48,8 @@ namespace ToDoListApi.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
